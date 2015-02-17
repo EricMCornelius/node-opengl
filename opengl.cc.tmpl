@@ -1,0 +1,31 @@
+#include <nan.h>
+#include <v8.h>
+#include <node_buffer.h>
+#include <opengl.h>
+
+#include <GL/glut.h>
+
+/*
+glutInit(&argc, argv);
+glutCreateWindow("GLEW Test");
+GLenum err = glewInit();
+if (GLEW_OK != err)
+{
+  fprintf(stderr, "Error: %s\n", glewGetErrorString(err));
+}
+fprintf(stdout, "Status: Using GLEW %s\n", glewGetString(GLEW_VERSION));
+*/
+
+using namespace v8;
+
+namespace opengl {
+
+${methods}
+
+void InitAll(Handle<Object> exports) {
+  ${exports}
+}
+
+}
+
+NODE_MODULE(opengl, opengl::InitAll)
